@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raven Flight</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game-wrapper">
+
+    <header class="game-header">
+        <div class="eyebrow">A GOTHIC FOREST ADVENTURE</div>
+        <h1>RAVEN FLIGHT</h1>
+        <p>Fly through the forgotten woods. Gather lost souls. Survive the darkness.</p>
+    </header>
+
+    <div class="game-container">
+        <canvas id="gameCanvas" width="900" height="500"></canvas>
+
+        <div class="hud">
+            <div>SOULS <span id="souls">0</span></div>
+            <div>DISTANCE <span id="distance">0</span></div>
+            <div>BEST <span id="best">0</span></div>
+        </div>
+
+        <div class="overlay" id="overlay">
+            <div class="overlay-content">
+                <div class="raven-symbol">✦</div>
+                <h2 id="overlayTitle">THE FOREST AWAITS</h2>
+                <p id="overlayText">
+                    Guide your raven through the haunted woods.
+                    Hold to rise. Release to descend.
+                </p>
+                <button id="startButton">TAKE FLIGHT</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <p><strong>CONTROLS</strong></p>
+        <p>Hold SPACE, W, ↑, or touch to rise • Release to descend • P to pause</p>
+    </div>
+
+    <footer>
+        RAVEN FLIGHT • AN ORIGINAL PIXEL-STYLE ARCADE GAME
+    </footer>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
