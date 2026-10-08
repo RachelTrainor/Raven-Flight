@@ -54,6 +54,7 @@ function resetGame() {
     particles = [];
 
     rising = false;
+
     updateHUD();
 }
 
@@ -193,9 +194,9 @@ function drawRaven() {
     const x = Math.round(raven.x);
     const y = Math.round(raven.y);
 
-    raven.flap += 0.45;
+    raven.flap += 0.25;
 
-    const wing = Math.sin(raven.flap) * 16;
+    const wing = Math.sin(raven.flap) * 11;
 
     // Tail
     ctx.fillStyle = "#080a10";
@@ -338,15 +339,14 @@ function updateGame() {
     speed = Math.min(6, 3 + distance / 1500);
     distance += speed * 0.045;
 
-    // BALANCED FAST FREE-FLIGHT PHYSICS
+    // Faster free-flight physics
     if (rising) {
-        raven.velocity -= 3.0;
+        raven.velocity -= 0.75;
     } else {
-        raven.velocity += 1.8;
+        raven.velocity += 0.45;
     }
 
-    // Fast but controllable movement
-    raven.velocity = Math.max(-22, Math.min(22, raven.velocity));
+    raven.velocity = Math.max(-7, Math.min(7, raven.velocity));
     raven.y += raven.velocity;
 
     if (raven.y < 0 || raven.y + raven.height > groundY) {
