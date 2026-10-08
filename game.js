@@ -193,9 +193,9 @@ function drawRaven() {
     const x = Math.round(raven.x);
     const y = Math.round(raven.y);
 
-    raven.flap += 0.35;
+    raven.flap += 0.45;
 
-    const wing = Math.sin(raven.flap) * 14;
+    const wing = Math.sin(raven.flap) * 16;
 
     // Tail
     ctx.fillStyle = "#080a10";
@@ -338,15 +338,15 @@ function updateGame() {
     speed = Math.min(6, 3 + distance / 1500);
     distance += speed * 0.045;
 
-    // EXTRA FAST FREE-FLIGHT PHYSICS
+    // ULTRA FAST FREE-FLIGHT PHYSICS
     if (rising) {
-        raven.velocity -= 2.4;
+        raven.velocity -= 4.5;
     } else {
-        raven.velocity += 1.4;
+        raven.velocity += 3.0;
     }
 
-    // Maximum vertical speed increased to 18
-    raven.velocity = Math.max(-18, Math.min(18, raven.velocity));
+    // Maximum vertical speed increased to 30
+    raven.velocity = Math.max(-30, Math.min(30, raven.velocity));
     raven.y += raven.velocity;
 
     if (raven.y < 0 || raven.y + raven.height > groundY) {
