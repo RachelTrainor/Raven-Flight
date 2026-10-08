@@ -338,15 +338,15 @@ function updateGame() {
     speed = Math.min(6, 3 + distance / 1500);
     distance += speed * 0.045;
 
-    // ULTRA FAST FREE-FLIGHT PHYSICS
+    // BALANCED FAST FREE-FLIGHT PHYSICS
     if (rising) {
-        raven.velocity -= 4.5;
+        raven.velocity -= 3.0;
     } else {
-        raven.velocity += 3.0;
+        raven.velocity += 1.8;
     }
 
-    // Maximum vertical speed increased to 30
-    raven.velocity = Math.max(-30, Math.min(30, raven.velocity));
+    // Fast but controllable movement
+    raven.velocity = Math.max(-22, Math.min(22, raven.velocity));
     raven.y += raven.velocity;
 
     if (raven.y < 0 || raven.y + raven.height > groundY) {
