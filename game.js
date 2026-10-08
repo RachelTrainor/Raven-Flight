@@ -346,7 +346,7 @@ function updateGame() {
         raven.velocity += 0.45;
     }
 
-    raven.velocity = Math.max(-7, Math.min(7, raven.velocity));
+    raven.velocity = Math.max(-15, Math.min(15, raven.velocity));
     raven.y += raven.velocity;
 
     if (raven.y < 0 || raven.y + raven.height > groundY) {
