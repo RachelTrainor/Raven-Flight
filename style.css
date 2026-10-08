@@ -1,0 +1,189 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --background: #101018;
+    --panel: #1a1b28;
+    --text: #e5e0d5;
+    --muted: #9c9aaa;
+    --accent: #9c8ac0;
+    --border: #383648;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.game-wrapper {
+    width: min(1100px, 96%);
+    margin: 0 auto;
+    padding: 35px 0;
+    text-align: center;
+}
+
+.game-header {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+h1, h2 {
+    font-family: 'Cinzel', serif;
+}
+
+h1 {
+    font-size: clamp(32px, 6vw, 58px);
+    letter-spacing: 6px;
+    margin: 0;
+}
+
+.game-header p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    background: #111421;
+    box-shadow: 0 15px 50px rgba(0,0,0,.4);
+    touch-action: none;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+.hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: linear-gradient(rgba(10,10,20,.85), transparent);
+    font-size: 11px;
+    letter-spacing: 2px;
+    pointer-events: none;
+}
+
+.hud span {
+    display: block;
+    font-size: 20px;
+    color: #d1bbff;
+    margin-top: 5px;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,10,20,.83);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.overlay-content {
+    max-width: 420px;
+}
+
+.raven-symbol {
+    color: #bba6e8;
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.overlay h2 {
+    font-size: clamp(18px, 4vw, 30px);
+    letter-spacing: 3px;
+}
+
+.overlay p {
+    color: #bbb6c6;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+button {
+    background: #75658f;
+    color: white;
+    border: 1px solid #ad99d1;
+    padding: 14px 32px;
+    margin-top: 15px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+button:hover {
+    background: #9780b9;
+}
+
+.controls {
+    margin-top: 25px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.controls strong {
+    color: var(--accent);
+    letter-spacing: 3px;
+}
+
+footer {
+    margin-top: 45px;
+    font-size: 10px;
+    color: #777386;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+    .game-wrapper {
+        padding-top: 20px;
+    }
+
+    .hud {
+        padding: 8px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .hud span {
+        font-size: 14px;
+    }
+
+    .overlay p {
+        font-size: 11px;
+    }
+
+    .controls {
+        font-size: 11px;
+    }
+}
